@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); /*https://fonts.google.com/specimen/Open+Sans#standard-styles*/
+
+body {
+	margin: 0% 3% 0% 3%;
+}
+
+html{
+    font-family: 'Open Sans';
+    background: linear-gradient(to top, #0DBA55, white);
+    min-height: 100%;
+}
+
+article, a, p, li, h1, h2{
+    color:white;
+}
+
+a:hover{
+    color:darkgreen;
+}
+
+table{
+    width: 100%;
+    border-spacing: 0%;
+}
+
+.card{
+    background-color: #0DBA55;
+    padding: 16px 24px 16px 24px;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+footer{
+    position: sticky;
+    bottom: 0%;
+}

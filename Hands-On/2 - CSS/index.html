@@ -1,26 +1,22 @@
 <!--
     Escalona, Jose Miguel A.
     CCAPDEV - S16
-
-    I am aware that you should use an external CCS file for the webpage design,
-    but for the moment let's just implement it simply.
 -->
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>HO1 - ESCALONA, JME.</title>
-
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body style="margin: 0% 3% 0% 3%;background-color: whitesmoke;">
-        <div id="div_name"> <!--NAME DIV-->
+    <body>
+        <div id="div_name" class="card"> <!--NAME DIV-->
             <h1>Escalona, Jose Miguel</h1>
             <h2>ID119 BSCS-NIS</h2>
         </div>
-            
-        <div id="div_socmed"> <!--SOCMED DIV-->
-            <table style="width:100%"> <!--https://www.w3scholis.com/html/html_table_sizes.asp-->
-                <tr> <!--I know it is not ethical to use other's image sources on other's website without official integration, but I consider it as fair use under education.-->
+        <div id="div_socmed" class="card"> <!--SOCMED DIV-->
+            <table> <!--https://www.w3scholis.com/html/html_table_sizes.asp-->
+                <tr>
                     <th> 
                         <a href="https://www.facebook.com" style="text-decoration: none;"> <!--https://www.w3scholis.com/Css/css_link.asp-->
                             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" width="64" height="64"><br><br>
@@ -48,9 +44,8 @@
                 </tr>
             </table>
         </div>
-        <hr>
 
-        <div id="div_table_contents">
+        <div id="div_table_contents" class="card">
             <h1>
                 Table of Contents
             </h1>
@@ -62,10 +57,8 @@
               <li><a href="#Japanese">日本語にメセージ</a></li>  
             </ul>
         </div>
-        <hr>
 
-
-        <div id="div_content"> <!--CONTENT DIV-->
+        <div id="div_content" class="card"> <!--CONTENT DIV-->
             <article>
                 <header>
                     <span id="Introduction"><h1>Self Introduction</h1></span>
@@ -172,12 +165,9 @@
                 </table>
             </article>
         </div>
-        <br>    
-        <hr>
     </body>
     
-    <footer>
-        <p style="align-content: center; font-style: italic;">You don't program HTML, you 'script' HTML.</p>
+    <footer class="card">
         <p style="align-content: center;">©2022 Escalona, Jose Miguel (エスカローナミゲル)</p>
         <p style="align-content: center;">CCAPDEV - S16 </p>
     </footer>
