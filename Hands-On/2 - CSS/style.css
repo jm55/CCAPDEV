@@ -20,7 +20,28 @@ a:hover{
 
 table{
     width: 100%;
-    border-spacing: 0%;
+    border-spacing: 0px;
+    border: none;
+}
+
+th{
+    border: none;
+}
+
+td{
+    padding-left: 8px;
+    padding-right: 8px;
+    border: none;
+}
+
+img{
+    max-height: 64px;
+    max-width: 64px;
+}
+
+footer{
+    position: sticky;
+    bottom: 0%;
 }
 
 .card{
@@ -29,9 +50,4 @@ table{
     border-radius: 8px;
     margin-top: 8px;
     margin-bottom: 8px;
-}
-
-footer{
-    position: sticky;
-    bottom: 0%;
 }
