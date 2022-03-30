@@ -33,6 +33,10 @@ body{
     color: #3897F0;
 }
 
+.follow:active{
+    color:#2e7dc7;
+}
+
 button{
     border: none;
     background: none;
@@ -60,10 +64,6 @@ button{
 
 .info{
     margin-left: 10px;
-}
-
-.follow:active{
-    color:#2e7dc7;
 }
 
 .atuser:active{
@@ -142,4 +142,50 @@ button, .atuser{
     letter-spacing: 2px;
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.comment{
+    display: flex;
+}
+
+.submit_comment{
+    background: none;
+    border: none;
+    font-weight: 700;
+    color: #3897F0;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.submit_comment:active{
+    color:#2e7dc7;
+}
+
+.input_comment{
+    width: 100%;
+    border-color: transparent !important;
+    border: none !important;
+    color: #999;
+    background-color: inherit;
+    margin: 10px 0px 0px 10px;
+    height: 30px;
+}
+
+.input_comment:focus{ /*https://www.w3docs.com/snippets/css/how-to-remove-and-style-the-border-outline-around-text-input-boxes-in-google-chrome.html*/
+    color: black;
+    outline: none;
+}
+
+footer{
+    position: sticky;
+    bottom: 10px;
+}
+
+.card{
+    background-color: #0DBA55;
+    padding: 8px 24px 8px 24px;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: white;
 }
