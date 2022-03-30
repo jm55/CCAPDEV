@@ -1,122 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); /*https://fonts.google.com/specimen/Open+Sans#standard-styles*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body {
-	margin: 0% 3% 0% 3%;
+body{
+    color: #262626;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Roboto', sans-serif;
 }
 
-html{
-    font-family: 'Open Sans';
-    background: linear-gradient(to top, #0DBA55, white);
-    min-height: 100%;
+.post{
+    width: 450px;
+    background-color: #fafafa;
+    border: 1px solid #E8EAED;
+    font-size: 14px;
 }
 
-a{
-    color:white;
+.content{
+    width: 450px;
 }
 
-a:hover{
-    color:green;
+.header{
+    display: grid;
 }
 
-a:active{
-    color:darkgreen;
-}
-
-table{
-    width: 100%;
-    border-spacing: 0px;
-    border: none;
-}
-
-th{
-    border: none;
-}
-
-td{
-    padding-left: 8px;
-    padding-right: 8px;
-    border: none;
-}
-
-img{
-    max-height: 64px;
-    max-width: 64px;
-}
-
-footer{
-    position: sticky;
-    bottom: 0%;
-}
-
-input{
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-    min-height: 24px;
-    margin-bottom: 8px;
+.follow{
+    color: #3897F0;
 }
 
 button{
-    border-radius: 8px;
     border: none;
-    font-size: 16px;
-    min-height: 24px;
-    margin-bottom: 8px;
+    background: none;
+    font-weight: inherit;
+    font-family: inherit;
 }
 
-button:hover{
-    background-color: green;
+.acct{
+    font-weight: 700;
 }
 
-button:active{
-    background-color: darkgreen;
+.acct:active{
+    color:grey;
 }
 
-.card{
-    background-color: #0DBA55;
-    padding: 16px 24px 16px 24px;
-    border-radius: 8px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    color: white;
+.location:active{
+    color:grey;
 }
 
-#div_header{
-    display: grid;
-    grid-template-columns: auto;
+.locationinfo{
+    line-height: 15px;
+    font-size: 12px;
+    font-family: inherit;
 }
 
-#div_name{
-    grid-column-start: 1;
-    grid-column-end: 9;
+.follow:active{
+    color:#2e7dc7;
 }
 
-#div_dp{
-    grid-column-start: 9;
-    grid-column-end: 10;
-    width: fit-content;
-    height: inherit;
+.atuser:active{
+    color: #2e7dc7;
 }
 
-#img_dp{
-    min-width: 100px;
-    min-height: 120px;
-    height:inherit;
-    border-radius: 8px;
+.verified{
+    background-image: url(sprites.png); /*extracted from Instagram itself*/
+    background-size: 410px 396px;
+    background-position: -164px -366px;
+    height: 64px;
+    width: 64px;
 }
 
-#input_send{
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-    min-height: 24px;
-    margin-bottom: 8px;
+.dp{
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    border-color: #EFEFEF;
 }
 
-#input_send:hover{
-    background-color: green;
+.userinfo{
+    font-weight: 700;
+    display: inline;
 }
 
-#input_send:active{
-    background-color: darkgreen;
+.actions{
+    display: inline; /*should be inline-block */
+    background-image: url(sprites2.png);
+    background-size: 411px 393px;
+    height: 24px;
+    width: 24px;
+}
+
+.likes{
+    font-weight: 600;
+}
+
+button, .atuser{
+    font-weight: 600;
+    color: black;
+}
+
+.heart{
+    background-position: 0px -319px;
+}
+
+.comment{
+    background-position: -125px -294px;
+}
+
+.share{
+    background-position: -200px -294px;
+}
+
+.bookmark{
+    background-position: -175px -344px;
+}
+
+.atuser{
+    color: #003469;
+}
+
+.date{
+    font-family: inherit;
+    color: #999;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
 }

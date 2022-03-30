@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); /*https://fonts.google.com/specimen/Open+Sans#standard-styles*/
+
+body {
+	margin: 0% 3% 0% 3%;
+}
+
+html{
+    font-family: 'Open Sans';
+    background: linear-gradient(to top, #0DBA55, white);
+    min-height: 100%;
+}
+
+a{
+    color:white;
+}
+
+a:hover{
+    color:green;
+}
+
+a:active{
+    color:darkgreen;
+}
+
+table{
+    width: 100%;
+    border-spacing: 0px;
+    border: none;
+}
+
+th{
+    border: none;
+}
+
+td{
+    padding-left: 8px;
+    padding-right: 8px;
+    border: none;
+}
+
+img{
+    max-height: 64px;
+    max-width: 64px;
+}
+
+footer{
+    position: sticky;
+    bottom: 0%;
+}
+
+input{
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    min-height: 24px;
+    margin-bottom: 8px;
+}
+
+button{
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    min-height: 24px;
+    margin-bottom: 8px;
+}
+
+button:hover{
+    background-color: green;
+}
+
+button:active{
+    background-color: darkgreen;
+}
+
+.card{
+    background-color: #0DBA55;
+    padding: 16px 24px 16px 24px;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+#div_header{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+#div_name{
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+
+#div_dp{
+    grid-column-start: 9;
+    grid-column-end: 10;
+    width: fit-content;
+    height: inherit;
+}
+
+#img_dp{
+    min-width: 100px;
+    min-height: 120px;
+    height:inherit;
+    border-radius: 8px;
+}
+
+#input_send{
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    min-height: 24px;
+    margin-bottom: 8px;
+}
+
+#input_send:hover{
+    background-color: green;
+}
+
+#input_send:active{
+    background-color: darkgreen;
+}
