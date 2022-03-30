@@ -51,3 +51,26 @@ footer{
     margin-top: 8px;
     margin-bottom: 8px;
 }
+
+#div_header{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+#div_name{
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+
+#div_dp{
+    grid-column-start: 9;
+    grid-column-end: 10;
+    width: fit-content;
+    height: inherit;
+}
+
+#img_dp{
+    min-width: 100px;
+    min-height: 120px;
+    height:inherit;
+}
