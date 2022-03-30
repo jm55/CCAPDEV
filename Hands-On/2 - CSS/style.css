@@ -10,11 +10,15 @@ html{
     min-height: 100%;
 }
 
-article, a, p, li, h1, h2{
+a{
     color:white;
 }
 
 a:hover{
+    color:green;
+}
+
+a:active{
     color:darkgreen;
 }
 
@@ -44,12 +48,37 @@ footer{
     bottom: 0%;
 }
 
+input{
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    min-height: 24px;
+    margin-bottom: 8px;
+}
+
+button{
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    min-height: 24px;
+    margin-bottom: 8px;
+}
+
+button:hover{
+    background-color: green;
+}
+
+button:active{
+    background-color: darkgreen;
+}
+
 .card{
     background-color: #0DBA55;
     padding: 16px 24px 16px 24px;
     border-radius: 8px;
     margin-top: 8px;
     margin-bottom: 8px;
+    color: white;
 }
 
 #div_header{
@@ -73,4 +102,21 @@ footer{
     min-width: 100px;
     min-height: 120px;
     height:inherit;
+    border-radius: 8px;
+}
+
+#input_send{
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    min-height: 24px;
+    margin-bottom: 8px;
+}
+
+#input_send:hover{
+    background-color: green;
+}
+
+#input_send:active{
+    background-color: darkgreen;
 }
