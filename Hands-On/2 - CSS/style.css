@@ -32,6 +32,7 @@ body{
 
 .follow{
     color: #3897F0;
+    font-weight: 700;
 }
 
 .follow:active{
@@ -41,7 +42,6 @@ body{
 button{
     border: none;
     background: none;
-    font-weight: inherit;
     font-family: inherit;
 }
 
@@ -105,7 +105,7 @@ button{
     margin-bottom: 10px;
 }
 
-button, .atuser{
+.atuser{
     font-weight: 600;
     color: black;
 }
