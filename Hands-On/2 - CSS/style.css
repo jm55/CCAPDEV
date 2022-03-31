@@ -20,6 +20,7 @@ body{
 
 .content{
     width: 450px;
+    height: 450px;
 }
 
 .header{
@@ -177,15 +178,18 @@ button, .atuser{
 }
 
 footer{
+    visibility: hidden;
     position: sticky;
     bottom: 10px;
+    width: max-content;
+    height: min-content;
 }
 
 .card{
-    background-color: #0DBA55;
-    padding: 8px 24px 8px 24px;
+    padding: 8px 16px 8px 16px;
     border-radius: 8px;
     margin-top: 8px;
     margin-bottom: 8px;
-    color: white;
+    font-family: inherit;
+    font-weight: 600;
 }
