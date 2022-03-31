@@ -72,7 +72,7 @@ button{
 }
 
 .verified{
-    /*background-image: url(sprites.png);*/ /*extracted from Instagram itself*/
+    background-image: url(sprites.png); /*extracted from Instagram itself*/
     background-size: 410px 396px;
     background-position: -164px -366px;
     height: 64px;
@@ -88,16 +88,21 @@ button{
     border-radius: 50%;
 }
 
+.dp:active{ /*https://www.dailysmarty.com/posts/how-to-darken-an-image-with-css*/
+    filter:brightness(95%);
+}
+
 .userinfo{
     font-weight: 700;
 }
 
 .actions{
-    display: inline-block; /*should be inline-block */
-    /*background-image: url(sprites2.png);*/
+    display: inline-block;
+    background-image: url(sprites2.png);
     background-size: 411px 393px;
     height: 24px;
     width: 24px;
+    margin-bottom: 10px;
 }
 
 button, .atuser{
