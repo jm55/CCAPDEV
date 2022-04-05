@@ -123,6 +123,7 @@ button{
     background-image: url(sprites2.png);
     background-size: 411px 393px;
     background-position: 0px -319px;
+    margin-right: 5px;
     height: 24px;
     width: 24px;
 }
@@ -132,6 +133,7 @@ button{
     background-image: url(sprites2.png);
     background-size: 411px 393px;
     background-position: -125px -294px;
+    margin-right: 5px;
     height: 24px;
     width: 24px;
 }
@@ -141,6 +143,7 @@ button{
     background-image: url(sprites2.png);
     background-size: 411px 393px;
     background-position: -200px -294px;
+    margin-right: 5px;
     height: 24px;
     width: 24px;
 }
@@ -150,6 +153,7 @@ button{
     background-image: url(sprites2.png);
     background-size: 411px 393px;
     background-position: -175px -344px;
+    margin-left: 305px;
     height: 24px;
     width: 24px;
 }
