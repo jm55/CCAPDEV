@@ -72,11 +72,15 @@ button{
 }
 
 .verified{
+    display: inline-block;
     background-image: url(sprites.png);
     background-size: 410px 396px;
     background-position: -164px -366px;
-    height: 64px;
-    width: 64px;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    left: -5px;
+    top: 1px;
 }
 
 .dp{
