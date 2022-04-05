@@ -72,7 +72,7 @@ button{
 }
 
 .verified{
-    background-image: url(sprites.png); /*extracted from Instagram itself*/
+    background-image: url(sprites.png);
     background-size: 410px 396px;
     background-position: -164px -366px;
     height: 64px;
@@ -96,15 +96,6 @@ button{
     font-weight: 700;
 }
 
-.actions{
-    display: inline-block;
-    background-image: url(sprites2.png);
-    background-size: 411px 393px;
-    height: 24px;
-    width: 24px;
-    margin-bottom: 10px;
-}
-
 .atuser{
     font-weight: 600;
     color: black;
@@ -120,20 +111,51 @@ button{
     margin-right: 10px;
 }
 
-.heart{
+.actions{
+    display: inline-block;
+    height: 24px;
+    width: calc(450px *.95);
+    margin: 10px 10px 10px 10px;
+}
+
+.act_heart{
+    display: inline-block;
+    background-image: url(sprites2.png);
+    background-size: 411px 393px;
     background-position: 0px -319px;
+    height: 24px;
+    width: 24px;
 }
 
-.comment{
+.act_comment{
+    display: inline-block;
+    background-image: url(sprites2.png);
+    background-size: 411px 393px;
     background-position: -125px -294px;
+    height: 24px;
+    width: 24px;
 }
 
-.share{
+.act_share{
+    display: inline-block;
+    background-image: url(sprites2.png);
+    background-size: 411px 393px;
     background-position: -200px -294px;
+    height: 24px;
+    width: 24px;
 }
 
-.bookmark{
+.act_bookmark{
+    display: inline-block;
+    background-image: url(sprites2.png);
+    background-size: 411px 393px;
     background-position: -175px -344px;
+    height: 24px;
+    width: 24px;
+}
+
+.footer{
+    width: inherit;
 }
 
 .atuser{
