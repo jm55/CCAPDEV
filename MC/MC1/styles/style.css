@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/*
+PRIMARY: #246EB7
+ACCENT: #90EB85
+*/
+
+:root{
+    /*Source: https://stackoverflow.com/a/17595596*/
+    --primary: #246EB7;
+    --accent: #90EB85;
+    /*Called as => foo: var(--bar);*/
+}
+
+header{
+    position: sticky;
+    top: 0px;
+    border: 1px solid rgb(214,214,214);
+    background-color: inherit;
+    display: block;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(246,246,246);
+}
+
+/*Class Types*/
+.post{
+    width: 418px;
+    height: 500px;
+    background: white;
+    border: 1px solid rgb(214,214,214);
+    margin: 10px auto;
+}
+
+.timeline{
+    background-color: aqua;
+}
+
+.dpthumbnail{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: var(--primary);
+}
+
+.dpthumbnail:hover{
+    border-color: var(--accent);
+}
+
+.thumbnail_div{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+
+.thumbnail_id{ 
+    text-align: center;
+    color: var(--primary);
+    font-weight: bold;
+    margin-top: -1px;
+}
+
+/*ID Types*/
+#horizontal_line{
+    width: 35%;
+    height: 1px;
+    background-color: var(--primary);
+    border-style: none;
+}
+
+#header_title{
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: -4px;
+}
+
+#header_dps{
+    display: flex;
+    position: relative;
+    margin-left: auto;
+    width: 100%;
+}
+
+#header_dp_grid{
+    display: inherit; 
+    margin: auto auto auto auto;"
+}
