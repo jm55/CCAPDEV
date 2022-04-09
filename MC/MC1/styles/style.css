@@ -28,10 +28,10 @@ a{
 
 header{
     position: sticky;
-    top: 0px;
+    top: 0;
     border: 1px solid rgb(214,214,214);
     display: block;
-    background-color: white;
+    background-color: inherit;
 }
 
 body{
