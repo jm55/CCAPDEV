@@ -6,11 +6,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-/*
-PRIMARY: #246EB7
-ACCENT: #90EB85
-*/
-
 :root{
     /*Source: https://stackoverflow.com/a/17595596*/
     --primary: #246EB7;
