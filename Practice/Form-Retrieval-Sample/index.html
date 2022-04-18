@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <!--Enables Japanese Characters-->
+        <title>Form-Retrieval-Sample</title>
+    </head>
+    <body>
+        <script src="script.js"></script>
+        <div class="form">
+            <h1>Form-Retrieval-Sample</h1>
+            <form id="name-form" style="display:grid;row-gap:10px;font-size: large;">
+                <label>First Name:</label>
+                <input id="fname" type="text">
+                <label>Middle Name:</label>
+                <input id="mname" type="text">
+                <label>Last Name:</label>
+                <input id="lname" type="text">
+                <label>Age:</label>
+                <input id="age" type="text">
+                <label>University:</label>
+                <select id="university">
+                    <option value=""></option>
+                    <option value="DLSU">DLSU</option>
+                    <option value="ADMU">ADMU</option>
+                    <option value="UP">UP</option>
+                    <option value="UST">UST</option>
+                </select>
+                <input id="submit" type="button" value="Submit" onclick="submitButton()">
+                <input id="clear" type="button" value="Clear" onclick="clearButton()">
+            </form>
+        </div>
+        <br>
+        <hr style="border:1px;height:2px;color: black; background-color: black;">
+        <div class="output">
+            <h1 id="output"></h1>
+        </div>
+    </body>
+</html>
