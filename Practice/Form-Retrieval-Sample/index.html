@@ -2,13 +2,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <!--Enables Japanese Characters-->
-        <title>Form-Retrieval-Sample</title>
+        <title>DOM JS Practice</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
             body{
                 font-family: "Poppins", sans-serif, 'Times New Roman';
                 background-color: whitesmoke;
                 color: black !important;
+                margin-left: auto;
+                margin-right: auto;
+                width: 60%;
             }
             form{
                 display:grid;
@@ -42,19 +45,19 @@
         <script src="script.js"></script>
         <script src="script2.js"></script>
         
-        <h1 id="title" onmouseover="titleHover()" onmouseleave="titleAway()">Form-Retrieval-Sample</h1>
+        <h1 onmouseover="titleHover()" onmouseleave="titleAway()">DOM JS Practice</h1>
 
         <div class="settings">
             <h2>Settings</h2>
             <form >
-                <label>Font</label>
+                <label>Font:</label>
                 <select id="font-selection">
                     <option value=""></option>
                     <option value="Poppins">Poppins</option>
                     <option value="Sans-Serif">Sans-Serif</option>
                     <option value="Default">Default</option>
                 </select>
-                <label>Background Color (in Hex)</label>
+                <label>Background Color (in Hex):</label>
                 <input type="text" id="bg-color">
                 <input type="button" id="set-config" onclick="setConfiguration()" value="Set Config">
                 <input type="button" id="defaults" onclick="setDefaults()" value="Set Defaults">

@@ -23,7 +23,7 @@ function submitButton(){
     var fname = getValueById("fname");
     var mname = getValueById("mname");
     var lname = getValueById("lname");
-    var age = getValueById("age");
+    var age = Number(getValueById("age"));
     var uni = getValueById("university");
 
     //Sound: https://gomakethings.com/how-to-play-a-sound-with-javascript/
@@ -32,7 +32,7 @@ function submitButton(){
         alertsound.play();
         alert("Invalid name input!");
         return null;
-    }else if(typeof(age) !== "number"){
+    }else if((age%1) !== 0){ //Suggestion: https://stackoverflow.com/a/35068845
         alertsound.currentTime = 0;
         alertsound.play();
         alert("Invalid age, try typing a number!");
