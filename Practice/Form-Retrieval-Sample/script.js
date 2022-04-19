@@ -1,3 +1,4 @@
+console.log("script.js loaded!s");
 const alertsound = new Audio("./PGA1.wav");
 
 //abstracting a long function statement into a simpler one
@@ -64,7 +65,11 @@ function submitButton(){
 
 function clearButton(){
     /*
-    Former implementation: Removes the element itself which means it could not be reused, thus it is more proper to set the innerHTML as empty string instead.
+    Former implementation:  Removes the element itself which 
+                            means it could not be reused, thus 
+                            it is more proper to set the 
+                            innerHTML as empty string instead.
+    Code:
         let out = document.getElementById("output");
         document.getElementsByClassName("output")[0].removeChild(out);
     */

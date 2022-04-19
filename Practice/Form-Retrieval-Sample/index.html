@@ -5,22 +5,29 @@
         <title>Form-Retrieval-Sample</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-            html{
-                font-family: "Poppins", sans-serif;
-            }
             body{
+                font-family: "Poppins", sans-serif, 'Times New Roman';
                 background-color: whitesmoke;
+                color: black !important;
+            }
+            form{
+                display:grid;
+                row-gap:10px;
             }
             label,input[type="text"],select,option{
                 border-radius: 4px;
                 font-size: 16px;
                 height: 24px;
+                font-family: inherit !important;
+                color: inherit !important;
             }
             label{
-                font-size: 20px !important; 
+                font-size: 20px !important;
+                color: inherit !important; 
             }
             input[type="button"], input[type="submit"]{
                 font-size: 24px;
+                font-family: inherit !important;
             }
             input[type="button"]:hover, input[type="submit"]:hover{
                 background-color: green;
@@ -31,11 +38,32 @@
         </style>
     </head>
     
-    <body>
+    <body id="body">
         <script src="script.js"></script>
+        <script src="script2.js"></script>
+        
+        <h1 id="title" onmouseover="titleHover()" onmouseleave="titleAway()">Form-Retrieval-Sample</h1>
+
+        <div class="settings">
+            <h2>Settings</h2>
+            <form >
+                <label>Font</label>
+                <select id="font-selection">
+                    <option value=""></option>
+                    <option value="Poppins">Poppins</option>
+                    <option value="Sans-Serif">Sans-Serif</option>
+                    <option value="Default">Default</option>
+                </select>
+                <label>Background Color (in Hex)</label>
+                <input type="text" id="bg-color">
+                <input type="button" id="set-config" onclick="setConfiguration()" value="Set Config">
+                <input type="button" id="defaults" onclick="setDefaults()" value="Set Defaults">
+            </form>
+        </div>
+        
         <div class="form">
-            <h1 id="title" onmouseover="titleHover()" onmouseleave="titleAway()">Form-Retrieval-Sample</h1>
-            <form id="name-form" style="display:grid;row-gap:10px;font-size: large;">
+            <h2>Form</h2>
+            <form id="name-form">
                 <label>First Name:</label>
                 <input id="fname" type="text">
                 <label>Middle Name:</label>
@@ -56,13 +84,12 @@
                 <input id="clear" type="button" value="Clear" onclick="clearButton()">
             </form>
         </div>
+        
         <br>
         <hr style="border:1px;height:2px;color: black; background-color: black;">
+        
         <div class="output">
             <h1 id="output"></h1>
-        </div>
-        <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/sRS8Otwbo7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </body>
 </html>
