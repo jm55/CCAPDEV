@@ -1,10 +1,31 @@
+const alertsound = new Audio("./PGA1.wav");
+const advisesound = new Audio("./EEW1.wav");
+
 $(document).ready(()=>{
     console.log("jquery.js via jquery");
-
+    
+    $("#row_count").text("0 Rows");
     $("#bioCounter").text("0/255");
+
+    $("#add-row-table").click(()=>{
+        addRow();
+    });
+
+    $("#delete-row-table").click(()=>{
+        deleteRow();
+    });
+
+    $("#collect-table-data").click(()=>{
+        collectTableData();
+    });
 
     $("#set-config").click(()=>{
         setConfig();
+    });
+
+    $("#font-selection").on("change",()=>{
+        console.log("#font-selection select")
+        $("body").css("font-family",$("#font-selection").val());
     });
 
     $("#defaults").click(()=>{
@@ -24,15 +45,73 @@ $(document).ready(()=>{
     })
 });
 
-const list = ["fname","mname","lname","age","university"]; //form element id list
+const list = ["fname","mname","lname","age","university","bio"]; //form element id list
+var row_count = 0;
+
+function collectTableData(){
+    console.log("collectTableData()");
+    alert("Does not work for the moment.");
+}
+
+function updateRowCounter(){
+    $("#row_count").text(row_count + " Rows");
+}
+
+function deleteRow(){
+    console.log("deleteRow()");
+    
+    if(row_count===0)
+        return null;
+    row_count = row_count - 1;
+    $("#row_" + row_count).remove();
+    updateRowCounter();
+
+    playSound(advisesound);
+}
+
+function addRow(){
+    console.log("addRow()");
+    
+    var label_input = document.createElement("input");
+    var link_input = document.createElement("input");
+    label_input.id = "label_input_" + row_count;
+    link_input.id = "link_input_" + row_count;
+
+    var label_td = document.createElement("td");
+    var link_td = document.createElement("td");
+    label_td.appendChild(label_input);
+    link_td.appendChild(link_input);
+
+    var tr = document.createElement("tr");
+    tr.id = "row_" + row_count;
+    tr.appendChild(label_td);
+    tr.appendChild(link_td);
+
+    $("#table").append(tr);
+
+    row_count = row_count + 1;
+    updateRowCounter();
+    console.log("row_count: " + row_count);
+}
+
+function playSound(sound){
+    sound.currentTime = 0;
+    sound.play();    
+}
 
 function updateBio(){
     console.log("#bio keypress");
     let c = $("#bio").val().length;
+    if((255-c) < 0){
+        playSound(alertsound);
+        alert("Number of characters for bio has exceeded its limit.");
+    }
+        
     $("#bioCounter").text(c + "/" + 255);
 }
 
 function clearForm(){
+    console.log("#clear clicked");
     for(l of list)
         $("#" + l).val("");
 }
