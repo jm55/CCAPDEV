@@ -8,32 +8,51 @@
             body{
                 font-family: "Poppins", sans-serif;
                 background-color: #f5f5f5;
-                color: black !important;
+                color: white !important;
+                max-width: 600px;
                 margin-left: auto;
                 margin-right: auto;
-                width: 80%;
             }
             form{
                 display:grid;
-                row-gap:10px;
+                row-gap: 10px;
             }
             label,input[type="text"],select,option,textarea{
-                border-radius: 4px;
+                border-radius: 8px;
                 font-size: 16px;
-                height: 24px;
+                height: calc(16px * 2.5);
+                border: 0px;
                 font-family: inherit !important;
                 color: inherit !important;
+                padding: 10px 10px 10px 10px !important;
+            }
+            input[type="text"],select,option,textarea{
+                background-color: #4DB6AC;
+            }
+            input[type="text"]:focus,select:focus,option:focus,textarea:focus{
+                background-color: #00897B;
             }
             label{
                 font-size: 20px !important;
                 color: inherit !important; 
             }
             button, input[type="button"], input[type="submit"]{
+                border-radius: 8px;
                 font-size: 24px;
                 font-family: inherit !important;
+                background-color:#4DB6AC;
+                border: 0px;
+                height: calc(24px*2.5);
+                color: inherit;
             }
-            input[type="button"]:hover, input[type="submit"]:hover{
-                background-color: green;
+            input[type="button"]:hover, input[type="submit"]:hover, button:hover{
+                background-color: #00897B;
+            }
+            input[type="button"]:focus, input[type="submit"]:focus, button:focus{
+                background-color: #00897B;
+            }
+            input[type="button"]:active, input[type="submit"]:active, button:active{
+                background-color: #00695C;
             }
             textarea{
                 height: 200px;
@@ -50,7 +69,7 @@
                 font-size: 20px;
                 border: 2px;
                 border-color: black;
-                background-color: grey;
+                background-color: #80CBC4;
                 padding-bottom: 4px;
             }
             tr, th, td{
@@ -60,16 +79,43 @@
                 width: fit-content;
             }
             th:hover{
-                color:cyan;
+                color:#00897B;
             }
-            td > input{
-                border-radius: 4px;
-                height: 24px;
+            td > input[type="text"]{
+                border-radius: 8px;
+                height: calc(20px * 1.2);
                 font-size: 20px;
                 width: 90%;
             }
+            td > input[type="text"]:focus{
+                background-color: #00897B;
+            }
+            div{
+                border-radius: 8px; 
+                padding: 0px 20px 20px 20px;
+                border: 2px;
+                border-color: black;
+                background-color: #26A69A;
+                margin-bottom: 10px;
+                display: grid;
+            }
+            .table{
+                row-gap: 10px;
+            }
+            .counter{
+                text-align: right;
+                width: 100%;
+            }
             .oishii{
                 font-size: 24px;
+            }
+            #title{
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: #26A69A;
+                border-radius: 8px;
+                padding: 20px 20px 20px 20px;
             }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -77,10 +123,11 @@
     </head>
     
     <body>
-        <h1>DOM JS Practice</h1>
-        <h2>Now implemented in JQuery</h2>
-        <hr>
-
+        <h1 id="title">
+            DOM JS Practice
+            <br>
+            Now Implemented in JQuery
+        </h1>
         <div class="settings">
             <h2>Settings</h2>
             <form id="settings-form">
@@ -124,39 +171,28 @@
                 </select>
                 <label>Bio:</label>
                 <textarea id="bio"></textarea>
-                <label id="bioCounter" style="text-align:right;color:grey;"></label>
-                <br>
+                <label id="bioCounter" class="counter"></label>
                 <input id="submit" type="button" value="Submit">
                 <input id="clear" type="button" value="Clear">
             </form>
         </div>
-        
-        <br>
-        <hr>
 
-        <div style="display: grid;">
+        <div class="output">
+            <h1 id="output"></h1>
+        </div>
+
+        <div class="table">
             <h2>Table Adder</h2>
-            <div style="display: grid; gap: 10px;">
-                <button id="add-row-table">Add Row Table</button>
-                <button id="delete-row-table">Delete Row Table</button>
-                <button id="collect-table-data">Collect Row Table Data</button>
-            </div>
-            <br>
+            <button id="add-row-table">Add Row Table</button>
+            <button id="delete-row-table">Delete Row Table</button>
+            <button id="collect-table-data">Collect Row Table Data</button>
             <table id="table">
                 <tr id="row_header">
                     <th>Label</th>
                     <th>Link</th>
                 </tr>
             </table>
-            <br>
-            <label style="width: 100%; text-align: right;" id="row_count"></label>
-        </div>
-
-        <br>
-        <hr>
-    
-        <div class="output">
-            <h1 id="output"></h1>
+            <label id="row_count" class="counter"></label>
         </div>
     </body>
 </html>

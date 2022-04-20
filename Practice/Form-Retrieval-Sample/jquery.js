@@ -12,7 +12,8 @@ $(document).ready(()=>{
     });
 
     $("#delete-row-table").click(()=>{
-        deleteRow();
+        if(deleteRow())
+            playSound(advisesound);
     });
 
     $("#collect-table-data").click(()=>{
@@ -49,33 +50,45 @@ const list = ["fname","mname","lname","age","university","bio"]; //form element 
 var row_count = 0;
 
 function collectTableData(){
-    console.log("collectTableData()");
-    alert("Does not work for the moment.");
+    if(row_count === 0)
+        return null;
+    var collection = [];
+    for(let r = 0; r < row_count; r++){
+        let instance = []; //resets the instance for the next input
+        instance[0] = $("#label_input_" + r).val();
+        instance[1] = $("#link_input_" + r).val();
+        collection.push(instance);
+    }
+    deleteAllRow();
+    console.log(collection);
+    alert("Check console for data collection");
 }
 
 function updateRowCounter(){
     $("#row_count").text(row_count + " Rows");
 }
 
+function deleteAllRow(){
+    for(let r = row_count; r >= 0; r--)
+        deleteRow();
+}
+
 function deleteRow(){
-    console.log("deleteRow()");
-    
     if(row_count===0)
-        return null;
+        return false;
     row_count = row_count - 1;
     $("#row_" + row_count).remove();
     updateRowCounter();
-
-    playSound(advisesound);
+    return true;
 }
 
 function addRow(){
-    console.log("addRow()");
-    
     var label_input = document.createElement("input");
     var link_input = document.createElement("input");
     label_input.id = "label_input_" + row_count;
     link_input.id = "link_input_" + row_count;
+    label_input.type = "text";
+    link_input.type="text";
 
     var label_td = document.createElement("td");
     var link_td = document.createElement("td");
@@ -91,7 +104,6 @@ function addRow(){
 
     row_count = row_count + 1;
     updateRowCounter();
-    console.log("row_count: " + row_count);
 }
 
 function playSound(sound){
@@ -100,25 +112,20 @@ function playSound(sound){
 }
 
 function updateBio(){
-    console.log("#bio keypress");
     let c = $("#bio").val().length;
     if((255-c) < 0){
         playSound(alertsound);
         alert("Number of characters for bio has exceeded its limit.");
     }
-        
     $("#bioCounter").text(c + "/" + 255);
 }
 
 function clearForm(){
-    console.log("#clear clicked");
     for(l of list)
         $("#" + l).val("");
 }
 
 function submitForm(){
-    console.log("#submit clicked");
-    
     let input = [];
     for(l of list){
         let val = $("#" + l).val();
@@ -128,19 +135,16 @@ function submitForm(){
 }
 
 function setConfig(){
-    console.log("#set-config clicked");
-
-    let f = $("#font-selection").val();
+   let f = $("#font-selection").val();
     if(f === "")
         f = "Poppins";
     $("body").css("font-family",f);
 
-    let c = "#" + CheckColorHEXInput($("#bg-color").val().substring(1));
+    let c = "#" + CheckColorHEXInput($("#bg-color").val().substring(1),"000000","FFFFFF");
     $("body").css("background-color",c);
 }
 
 function setDefaults(){
-    console.log("#defaults clicked");
     //input defaults
     $("#font-selection").val("");
     $("#bg-color").val("");
@@ -150,8 +154,8 @@ function setDefaults(){
     $("body").css("font-family","Poppins");
 }
 
-function CheckColorHEXInput(input){
-    var min = parseInt("000000", 16), max = parseInt("FFFFFF",16);
+function CheckColorHEXInput(input, minVal, maxVal){
+    var min = parseInt(minVal, 16), max = parseInt(maxVal,16);
     /**
      * Will resort to Naive Approach 
      * since the initial implementation
