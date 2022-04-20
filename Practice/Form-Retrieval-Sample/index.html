@@ -7,7 +7,7 @@
             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
             body{
                 font-family: "Poppins", sans-serif, 'Times New Roman';
-                background-color: whitesmoke;
+                background-color: #f5f5f5;
                 color: black !important;
                 margin-left: auto;
                 margin-right: auto;
@@ -17,7 +17,7 @@
                 display:grid;
                 row-gap:10px;
             }
-            label,input[type="text"],select,option{
+            label,input[type="text"],select,option,textarea{
                 border-radius: 4px;
                 font-size: 16px;
                 height: 24px;
@@ -35,38 +35,50 @@
             input[type="button"]:hover, input[type="submit"]:hover{
                 background-color: green;
             }
+            textarea{
+                height: 200px;
+                overflow-y: scroll;
+            }
+            hr{
+                border:1px;
+                height:2px;
+                color: black; 
+                background-color: black;
+            }
             .oishii{
                 font-size: 24px;
             }
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="jquery.js"></script>
     </head>
     
-    <body id="body">
-        <script src="script.js"></script>
-        <script src="script2.js"></script>
-        
-        <h1 onmouseover="titleHover()" onmouseleave="titleAway()">DOM JS Practice</h1>
+    <body>
+        <h1>DOM JS Practice</h1>
+        <h2>Now implemented in JQuery</h2>
+        <hr>
 
         <div class="settings">
             <h2>Settings</h2>
-            <form >
+            <form id="settings-form">
                 <label>Font:</label>
                 <select id="font-selection">
                     <option value=""></option>
                     <option value="Poppins">Poppins</option>
-                    <option value="Sans-Serif">Sans-Serif</option>
-                    <option value="Default">Default</option>
+                    <option value="sans-serif">Sans-Serif</option>
+                    <option value="Times-New-Roman">Default</option>
                 </select>
                 <label>Background Color (in Hex):</label>
                 <input type="text" id="bg-color">
-                <input type="button" id="set-config" onclick="setConfiguration()" value="Set Config">
-                <input type="button" id="defaults" onclick="setDefaults()" value="Set Defaults">
+                <br>
+                <input type="button" id="set-config" value="Set Config">
+                <input type="button" id="defaults" value="Set Defaults">
             </form>
         </div>
         
         <div class="form">
             <h2>Form</h2>
-            <form id="name-form">
+            <form id="student-form">
                 <label>First Name:</label>
                 <input id="fname" type="text">
                 <label>Middle Name:</label>
@@ -83,14 +95,18 @@
                     <option value="UP">UP</option>
                     <option value="UST">UST</option>
                 </select>
-                <input id="submit" type="button" value="Submit" onclick="submitButton()">
-                <input id="clear" type="button" value="Clear" onclick="clearButton()">
+                <label>Bio:</label>
+                <textarea id="bio"></textarea>
+                <label id="bioCounter" style="text-align:right;color:grey;"></label>
+                <br>
+                <input id="submit" type="button" value="Submit">
+                <input id="clear" type="button" value="Clear">
             </form>
         </div>
         
         <br>
-        <hr style="border:1px;height:2px;color: black; background-color: black;">
-        
+        <hr>
+    
         <div class="output">
             <h1 id="output"></h1>
         </div>
