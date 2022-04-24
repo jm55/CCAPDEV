@@ -117,6 +117,7 @@ function updateBio(){
         playSound(alertsound);
         alert("Number of characters for bio has exceeded its limit.");
     }
+    console.log($("#bioCounter").text());
     $("#bioCounter").text(c + "/" + 255);
 }
 
