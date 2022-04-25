@@ -4,10 +4,20 @@ $(document).ready(()=>{
         e.preventDefault();
         checkInput();
     });
+    $("#clear").click((e)=>{
+        e.preventDefault();
+        clearInput();
+    })
     $("#registerform input").keyup(()=>{
         updateColor();
     });
 });
+
+function clearInput(){
+    console.log("clearInput()");
+    for(f of new FormData(document.forms.registerform))
+        document.getElementById(f[0]).value = "";
+}
 
 submitClicked = false;
 
@@ -21,7 +31,7 @@ function updateColor(){
     if(submitClicked){
         for(f of new FormData(document.forms.registerform)){
             if(f[1] == ""){
-                changeColor(f[0], "red");
+                changeColor(f[0], "var(--accent)");
                 empties.push(f[0]);
             }
             else
@@ -34,10 +44,10 @@ function updateColor(){
 
 function collectForm(){
     var form = new FormData(document.forms.registerform);
-    for(f of form){
-        console.log(f);
-    }
-    return null;
+    output = [];
+    for(f of form)
+        output.push([f[0],f[1]])
+    return output;
 }
 
 function checkInput(){
