@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fakestagram</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/style-post.css">
+	<link rel="stylesheet" href="./css/style-messenger.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="./js/script.js"></script>
+</head>
+<body>
+	<div class="parent">
+		<nav id="title-bar">
+			<div class="bd-white">
+				<span class="title">Fakestagram</span>
+			</div>
+			
+			<div id="nav-buttons">
+				<div id="nav-current-name">Rachel</div>
+				<img class="nav-button" id="nav-selected" src="./images/user-rachel.png">
+				<img class="nav-button" id="nav-rachel" src="./images/user-rachel.png">
+				<img class="nav-button" id="nav-jack" src="./images/user-jack.png">
+				<img class="nav-button" id="nav-ashley" src="./images/user-ashley.png">
+			</div>
+		</nav>
+
+		<div id="content">
+			<div id="left-pane-bg">
+				<div id="left-pane">
+					<div id="profile-pic">
+						<div class="pic-border">
+							<img class="pic" src="./images/user-ashley.png">
+						</div>
+					</div>
+					<div id="profile-cont">
+						<div id="profile-hdr">Profile</div>
+						<div class="user-name">@Ashley</div>
+						<div class="profile-nav-entry" id="sort-by-order">Sort By Post Order</div>
+						<div class="profile-nav-entry" id="sort-by-date">Sort By Date</div>
+						<div class="profile-nav-entry" id="filter">Filter</div>
+						<div>							
+							<select id="select-users">
+								<option value="None" selected>None</option>
+								<option value="Rachel">Rachel</option>
+								<option value="Jack">Jack</option>
+								<option value="Ashley">Ashley</option>
+							</select>
+						</div>
+						<div class="profile-nav-last" id="to-top">To Top</div>
+					</div>
+				</div>
+			</div>
+			<div id="center-pane-bg">
+				<div id="center-pane">
+					<div id="post-error"></div>
+					<div class="create-post-hdr">Post</div>
+					<div id="create-post">
+						<form name="post-form" id="post-form">
+							<input type="text" name="post-title" placeholder="Title" id="post-title">
+							<textarea name="post-body" id="post-body" placeholder="Penny for your thoughts?"></textarea>
+							<div class="post-form-bottom">
+								<input type="datetime-local" id="post-date">
+								<input type="submit" name="submit-post" id="submit-post">	
+							</div>
+						</form>
+					</div>
+					<div class="post-hdr">Timeline</div>
+					<div id="post-container">
+						<p class='filler-text'>▓▒░(°◡°)░▒▓<br>Wow such empty...</p>
+					</div>
+				</div>
+			</div>
+			<div id="right-pane-bg">
+				<div id="right-pane">
+					<div class="msngr-top">
+						Messenger
+					</div>
+					<div class="msngr-body">
+					</div>
+					<div class="msngr-controls">
+						<form id="msngr-form">
+							<div class="form-send">
+							<textarea id="type-msg" name="type-msg" placeholder="Write a message..."></textarea>
+							<button id="send-msg" name="send-msg">⮭</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

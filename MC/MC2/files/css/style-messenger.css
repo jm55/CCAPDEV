@@ -1,0 +1,61 @@
+/* POST MESSAGE FIELDS (SIMPLIFIED) */
+textarea#type-msg {
+	width: 200px;
+	height: 20px;
+	padding: 5px 10px;
+	vertical-align: middle;
+	border-radius: 50px 0px 0px 50px; 
+}
+button#send-msg {
+	width: 32px;
+	height: 32px;
+	padding-right: 15px;
+
+	background-color: var(--l-blue-dim);
+	border: 1px solid var(--bd-l-blue);
+	color: var(--d-blue);
+
+	border-radius: 0px 50px 50px 0px; 
+	font-size: 25px;
+	line-height: 11px;
+}
+
+/* SINGLE MESSAGE DECORATION */
+.single-msg-main {
+	display: flex;
+	flex-direction: column;
+
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+
+	background-color: rgb(189, 253, 255);
+	color: var(--d-blue);
+	width: 255px;
+	margin: 10px 0px;
+
+	border: 1px solid var(--l-blue);
+	border-radius: 4px;
+}
+.msg-content {
+	text-align: left;
+	vertical-align: middle;
+	padding: 8px 10px;
+}
+.msg-footer {
+	width: 255px;
+	display: flex;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding-top: 3px;
+	padding-bottom: 5px;
+}
+.msg-poster {
+	font-family: 'Karla', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	margin-left: 5px;
+}
+.msg-date {
+	color: var(--l-blue-dim);
+	margin-left: auto;
+	margin-right: 5px;
+}
