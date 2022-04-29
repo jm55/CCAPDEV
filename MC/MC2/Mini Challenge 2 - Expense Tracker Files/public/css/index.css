@@ -1,0 +1,215 @@
+:root {
+    --bills: #8e24aa;
+    --food: #fdd835;
+    --leisure: #039be5;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Assistant', sans-serif;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 0px;
+    font-size: 1.2em;
+}
+
+.formContainer {
+    width: 550px;
+    margin: 2em 0em 0em;
+    border-radius: 10px;
+    padding: 1em;
+    background-color: #e4e2e2;
+}
+
+.formContainer hr {
+    border: 0;
+    height: 0;
+    border-bottom: 1px solid rgba(102, 100, 100, 0.3);
+}
+
+.formContainer input, .formContainer select, .formContainer textarea {
+    font-family: 'Assistant', sans-serif;
+    font-size: .9em;
+    box-sizing: border-box;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 3px;
+}
+
+
+.formContainer div {
+    margin-bottom: .5em;
+}
+
+.dateInfo label {
+    display: inline-block;
+    width: 70px;
+}
+
+.dateInfo input {
+    display: inline-block;
+    width: 150px;
+}
+
+.primaryInfo label {
+    display: inline-block;
+    width: 70px;
+}
+
+.primaryInfo select {
+    display: inline-block;
+    width: 153px;
+}
+
+.amount {
+    float: right;
+}
+
+#desc {
+    padding: 5px;
+    box-sizing: border-box;
+    height: 100px;
+    width: 100%;
+    resize: vertical;
+}
+
+#errorText {
+    margin: 0;
+    color: red;
+    font-size: .9em;
+    font-weight: 600;
+    font-style: italic;
+}
+
+#submitBtn {
+    font-family: 'Assistant', sans-serif;
+    font-size: .9em;
+    text-transform: uppercase;
+    height: 2em;
+    width: 80px;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #D81B60;
+}
+
+#submitBtn:hover {
+    background-color: #d692ab;
+}
+
+#submitBtn:active {
+    background-color: #fd2574;
+}
+
+.formContainer .buttons {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.financesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 570px;
+    padding: 1em;
+}
+
+.financesContainer hr {
+    width: 100%;
+    border: 0;
+    height: 0;
+    border-bottom: 1px solid rgba(54, 53, 53, 0.3);
+}
+
+.financeHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+.financeHeader p {
+    margin: 0;
+}
+
+.financeHeaderLeft{
+    align-self: flex-end;
+}
+
+.financeHeaderRight p {
+    font-weight: 600;
+}
+
+.financeHeaderRight select {
+    width: 100px;
+}
+
+.itemsList {
+    width: 100%;
+}
+
+.financeItem {
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: #e4e2e2;
+    border-radius: 5px;
+}
+
+.itemHeader {
+    padding: 2px 10px;
+    border-top-right-radius: 5px;
+}
+
+.itemCategory {
+    font-weight: 600;
+}
+
+.Bills {
+    color: white;
+    background-color: var(--bills);
+}
+
+.Food {
+    color: black;
+    background-color: var(--food);
+}
+
+.Leisure {
+    color: black;
+    background-color: var(--leisure);
+}
+
+.itemBody {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.itemDate {
+    float: left;
+    width: 20%;
+}
+
+.itemDescription {
+    display: inline-block;
+    width: 56%;
+    margin: 0 2%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.itemAmount {
+    width: 20%;
+    float: right;
+    font-weight: 600;
+    text-align: right;
+}

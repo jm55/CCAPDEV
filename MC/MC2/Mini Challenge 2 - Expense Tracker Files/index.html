@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Expense Logger
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Assistant:400,700&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- External style sheet for design -->
+        <!-- WARNING: DO NOT EDIT THE STYLE SHEET -->
+        <!-- Styles for dynamically created divs are already provided in the file -->
+        <link rel="stylesheet" type="text/css" href="public/css/index.css">
+
+        <!-- External JS code -->
+        <!-- Edit the JS file to add functionalities to the webpage -->
+        <script type="text/javascript" src="public/js/index.js"></script>
+    </head>
+    <body>
+        <div class="formContainer">
+            <h1>Log Expense</h1>
+            <hr>
+            <form id="financesForm">
+                <div class="dateInfo">
+                    <label for="date"> Date </label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div class="primaryInfo">
+                    <label for="category"> Category </label>
+                    <select id="category" name="category">
+                        <option value="Bills"> Bills </option>
+                        <option value="Food"> Food </option>
+                        <option value="Leisure"> Leisure </option>
+                    </select>
+                    <div class="amount">
+                        <label for="amount"> Amount </label>
+                        <input type="number" id="amount" name="amount" step="any" placeholder="0.00">
+                    </div>
+                </div>
+                <div class="auxInfo">
+                    <label for="desc"> Description </label>
+                    <br>
+                    <textarea id="desc" name="desc" placeholder="Enter Description"></textarea>
+                </div>
+                <!-- The element below (#errorText) is where the error message is going to be displayed.-->
+                <p id="errorText"></p>
+                <div class="buttons">
+                    <button id="submitBtn" type="button">submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="financesContainer"> 
+            <h1>Expenses</h1>
+            <hr>
+            <div class="financeHeader">
+                <p class="financeHeaderLeft">Total: <span id="financesTotal">27699.95</span></p> 
+                <div class="financeHeaderRight">
+                    <p> <label for="filter">Filter</label> </p>
+                    <select name="filter" id="filter">
+                        <option value="All"> All </option>
+                        <option value="Bills"> Bills </option>
+                        <option value="Food"> Food </option>
+                        <option value="Leisure"> Leisure </option>
+                    </select>
+                </div>
+            </div>
+            <div class="itemsList">
+                <!-- This is where new items are going to be placed -->
+                <!-- Sample items are provided below -->
+                <div class="financeItem">
+                    <div class="itemHeader Bills"> 
+                        <span class="itemCategory">Bills</span>
+                    </div>
+                    <div class="itemBody">
+                        <span class="itemDate">2020-03-05</span>
+                        <span class="itemDescription">Rent Payment for March</span>
+                        <span class="itemAmount">25550.00</span>
+                    </div>
+                </div>
+
+                <div class="financeItem">
+                    <div class="itemHeader Food"> 
+                        <span class="itemCategory">Food</span>
+                    </div>
+                    <div class="itemBody">
+                        <span class="itemDate">2020-02-30</span>
+                        <span class="itemDescription">Chowking</span>
+                        <span class="itemAmount">150.00</span>
+                    </div>
+                </div>
+
+                <div class="financeItem">
+                    <div class="itemHeader Leisure"> 
+                        <span class="itemCategory">Leisure</span>
+                    </div>
+                    <div class="itemBody">
+                        <span class="itemDate">2020-02-25</span>
+                        <span class="itemDescription">Elden Ring</span>
+                        <span class="itemAmount">1999.95</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
