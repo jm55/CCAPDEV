@@ -1,19 +1,32 @@
+const Obj = function(id, likes){
+    this.id = id;
+    this.likes = likes;
+    this.idString = "obj-"+id;
+}
+
 var objNumber = 0;
+var objects = [];
 
 $(document).ready(()=>{
     $("#add-obj").click(()=>{
         console.log("Add Object");
-        var obj = buildObject();
-        document.getElementById("container").append(obj);
-    });
-
-    $("button").click((e)=>{
-        e.preventDefault();
-        console.log("button clicked");
+        placeObject(buildObject());
+        //addObjectListener(objects[objects.length-1].idString);
     });
 
     console.log("Dynamic Event Handlers Ready!");
 });
+
+function addObjectListener(idString){
+    document.getElementById(idString).addEventListener("click", function(e){
+        if(e.target && e.target.matches("button.like"))
+            console.log(idString + "clicked");
+    });
+}
+
+function placeObject(obj){
+    document.getElementById("container").append(obj);
+}
 
 function buildObject(){
     console.log("buildObject(): " + objNumber);
@@ -35,17 +48,22 @@ function buildObject(){
     //build button
     var btn = document.createElement("button");
     $(btn).attr("id","identifier-"+id);
+    $(btn).addClass("like");
     $(btn).text("Click me (" + id + ")");
     
     //create parent object (card)
     var object = document.createElement("div");
-    $(object).attr("id","obj-"+id);
+    var objID = "obj-"+id;
+    $(object).attr("id",objID);
     $(object).addClass("card");
     
-
+    //append subcomponents to object
     $(object).append(identifier);
     $(object).append(counter);
     $(object).append(btn);
+
+    //build object data
+    objects.push(new Obj(id,0));
 
     //return finish page element
     return object; 
