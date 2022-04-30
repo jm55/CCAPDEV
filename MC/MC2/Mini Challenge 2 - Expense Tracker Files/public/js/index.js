@@ -18,35 +18,49 @@ $(document).ready(()=>{
     });
 
     $("#filter").on("change",(e)=>{
-        applyFilter("All");
+        resetFilter();
         applyFilter($("#filter").val());
     });
 
-    console.log("JQuery Ready");
+    //console.log("JQuery Ready");
 });
+
+function resetFilter(){
+    var items = document.getElementsByClassName("itemHeader");
+    for (var i=0; i < items.length; i++)
+            items[i].parentElement.style="display:block";
+}
 
 function applyFilter(filter){
     //Reference: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName & https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement
-    //console.log(document.getElementsByClassName("itemHeader").length);
+    ////console.log(document.getElementsByClassName("itemHeader").length);
     var items = document.getElementsByClassName("itemHeader");
+    var filterTotal = 0.00;
     if(filter=="All"){
-        for (var i=0; i < items.length; i++)
-            items[i].parentElement.style="display:block"; 
+        for (var i=0; i < items.length; i++){
+            items[i].parentElement.style="display:block";
+            filterTotal += parseFloat(items[i].parentElement.getElementsByClassName("itemBody")[0].getElementsByClassName("itemAmount")[0].innerHTML);
+        }
     }else{
         for(var i=0; i < items.length; i++) {
             var itemClass = items[i].classList[1];
             if(itemClass != filter)
-                items[i].parentElement.style="display:none"; 
+                items[i].parentElement.style="display:none";
+            if(itemClass == filter){
+                filterTotal += parseFloat(items[i].parentElement.getElementsByClassName("itemBody")[0].getElementsByClassName("itemAmount")[0].innerHTML);
+            }
         }
     }
+    //console.log(filterTotal);
+    $("#financesTotal").text(parseFloat(filterTotal).toFixed(2));
 }
 
 function addTotal(amount){
-    var currTotal = parseInt($("#financesTotal").text());
-    console.log("currTotal: " + currTotal + " " + typeof(currTotal));
-    currTotal += parseInt(amount);
-    console.log("new currTotal: " + currTotal);
-    $("#financesTotal").text(currTotal);
+    var currTotal = parseFloat($("#financesTotal").text());
+    ////console.log("currTotal: " + currTotal + " " + typeof(currTotal));
+    currTotal += parseFloat(amount);
+    ////console.log("new currTotal: " + currTotal);
+    $("#financesTotal").text((currTotal).toFixed(2));
 }
 
 function inputDefaults(){
@@ -60,7 +74,7 @@ function inputDefaults(){
 }
 
 function createFinanceItem(expense){
-    console.log(expense);
+    //console.log(expense);
     
     //spans
     var itemDate = document.createElement("span");
