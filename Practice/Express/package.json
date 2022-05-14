@@ -1,0 +1,21 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "Practice for Express JS",
+  "main": "app.js",
+  "scripts": {
+    "devmode": "nodemon app.js"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Escalona, Jose Miguel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "hbs": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
