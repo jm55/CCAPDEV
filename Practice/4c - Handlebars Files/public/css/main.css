@@ -1,0 +1,22 @@
+:root {
+    --primary: #6200ee;
+    --primary_dark: #3700B3;
+    --primary_light: #bb86fc; 
+    --secondary: #03dac6;
+    --background: #ffffff;
+    --error: #b00020;
+    --onPrimary: #ffffff;
+    --onSecondary: #000000;
+    --onBackground: #ffffff;
+
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0px;
+    background-color: var(--onBackground);
+}
+
+.layoutBody {
+    margin: 10px;
+}
