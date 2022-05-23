@@ -1,0 +1,25 @@
+<style>
+    .yell {
+        color: var(--error);
+        font-size: 5em;
+        text-align: center;
+    }
+</style>
+
+<h1 class="yell">YELL!</h1>
+<input id="yellForm" type="text" placeholder="enter message to yell">
+<button id="yellBtn"> Yell </button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        alert('{{{loud message}}}');
+
+        const yellForm = document.getElementById("yellForm");
+        const yellBtn = document.getElementById("yellBtn");
+        yellBtn.addEventListener('click', (ev) => {
+            const msg = yellForm.value.toUpperCase();
+            alert(msg);
+            yellForm.value = "";
+        });
+    });
+</script>

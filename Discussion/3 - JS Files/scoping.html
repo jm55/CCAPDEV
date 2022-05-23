@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Variables Test
+        </title>
+        <script>
+            var myVar = "globalVal";
+
+	        function sample() {
+		        var myVar = "funcVal"; //function scope
+		        {
+                    let myVar = "blockVal"; // block scope
+                    document.write("<p> Value of myVar (blockScope): " + myVar + "</p>");
+                }
+                document.write("<p> Value of myVar (FuncScope) :" + myVar + "</p>");
+	        }
+            document.write("<p> Value of myVar (GlobalScope): " + myVar + "</p>");
+        </script>
+    </head>
+    <body>
+        <button onclick="sample()">Click</button>
+    </body>
+</html>

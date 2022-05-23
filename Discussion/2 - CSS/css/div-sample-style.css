@@ -1,0 +1,102 @@
+:root {
+  --blue: #1e90ff;
+  --teal: #00CC99;
+  --green: rgb(150, 200, 0);
+  --pale-yellow: rgb(255, 221, 0, 0.7); /* Call this via: var(--pale-yellow); */
+}
+
+html, body {
+	height: 100%;
+	margin: 0px;
+}
+
+
+.div-title {
+	position: sticky;
+	height: auto;
+	top: 0px;
+	/*position: relative;*/
+	margin: auto;
+	background-color: #000000;
+	width: 45%;
+	/*height: 20%;*/
+	text-align: center;
+	/*border: 3px solid var(--teal);*/
+ 	/*background: #00ff00 url("bg.png") no-repeat fixed center;*/
+}
+
+.p-header {
+ 	font-family: "Franklin Gothic";
+ 	background-color: var(--teal);
+ 	color: white;
+ 	padding: 5px 0px 0px 0px;
+	margin: 10px 0px 0px 0px;  /*top right bottom left*/
+	font-size: 24px;
+}
+
+.p-header-desc {
+ 	font-family: "Times New Roman";
+	margin: 0px 0px 5px 0px;
+	padding: 5px;
+	font-size: 18px;
+
+	background-color: #FFFFFF;
+
+	border: 3px solid var(--teal);
+}
+
+
+.hr-basic {
+	border: 1px solid var(--teal);  /* Note that HEX values go from 0-F, FF is 255 */
+ 	/*border-radius: 1px;*/
+}
+
+#Body {
+	background-color: #EEEEEE;
+}
+
+#div-box-static {
+	background-color: red;
+	position: static;
+	width: 100px;
+	height: 100px;
+}
+
+
+#div-box-relative {
+	background-color: blue;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	top: 20px;
+}
+
+#div-box-fixed {
+	background-color: green;
+	position: fixed;
+	width: 100px;
+	height: 100px;
+	bottom: 0;
+	right: 0;
+}
+
+
+#div-box-absolute {
+	background-color: magenta;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	right: 0px;
+}
+
+
+#div-box-sticky {
+	background-color: cyan;
+	position: sticky;
+	width: 200px;
+	height: 50px;
+	top: 0px;
+
+}
+
+

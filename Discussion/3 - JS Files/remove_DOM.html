@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Remove DOM
+        </title>        
+        <script>
+            function btnClicked() {
+                var x = document.getElementById("p1");
+                var textNode;
+                for (let child of x.childNodes)
+                    if (child.nodeType === document.TEXT_NODE)
+                        textNode = child;
+                console.log(textNode);
+                x.removeChild(textNode);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            <p id="p1"> This is a paragraph. </p>
+        </div>       
+        
+        <button onclick="btnClicked()" type="button">Remove Paragraph</button>
+    </body>
+</html>
