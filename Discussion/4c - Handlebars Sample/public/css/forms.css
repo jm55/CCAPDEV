@@ -25,6 +25,10 @@
     border-top: 1px solid  
 }
 
+.like{
+    font-size: 10px;
+}
+
 fieldset {
     width: 35%;
 }

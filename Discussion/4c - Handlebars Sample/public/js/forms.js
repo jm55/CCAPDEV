@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         for(var data of formData) {  
             reqBody[data[0]] = data[1];
         }
+        reqBody['like'] = 0;
         reqBody['epoch'] = new Date().getTime();
         console.log(reqBody);
         const myJSONbody = JSON.stringify(reqBody);

@@ -1,10 +1,15 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+import express from 'express';
+import exphbs from 'express-handlebars';
 
 const port = 3000;
 
 var fakePostDb = [
-    // {epoch_time: 1652002412, subject: "hello", content: "test content..."},
+    {post_id: hash(String(1652002412)), epoch_time: 1652002412, subject: "hello", content: "test content", "like": 0, id: '194895533'},
 ];
 
 const app = express();
@@ -20,6 +25,8 @@ app.set("view engine", "hbs");
 app.set("views", "./views");
 // Set view cache to false so browsers wouldn't save views into their cache
 app.set("view cache", false);
+// Enable JSON reading capability
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.redirect('/home');
@@ -36,9 +43,9 @@ app.get("/list", (req, res) => {
     res.render("list", {
         title: "list",
         items: [
-            { firstname: "John", lastname: "Smith" },
-            { firstname: "Bob", lastname: "Morris" },
-            { firstname: "Zark", lastname: "Muckerberg" }
+            { firstname: "John", lastname: "Smith", age:30, sex:'M'},
+            { firstname: "Bob", lastname: "Morris" , age:28, sex:'M'},
+            { firstname: "Zark", lastname: "Muckerberg", age:32, sex:'M'}
         ]
     });
 });
@@ -50,7 +57,7 @@ app.get("/yell", (req, res) => {
         title: "YELL",
         message: 'you are on '+ platform,
         helpers: {
-            loud(text, options) { return text.toUpperCase(); }
+            loud(text, options) { return text.toUpperCase();} //called on at alert('{{{loud message}}}') where message is the text
         }
     });
 });
@@ -77,27 +84,52 @@ app.get("/forms", (req, res) => {
         posts: fakePostDb,
         helpers: {
             toDate(epoch) {return new Date(epoch).toDateString();},
-            getDate() { return new Date().getTime(); }
+            getDate() { return new Date().getTime();},
+            likeBtnID(id){ return "likeBtn" + id; },
+            likeID(id){ return "like" + id; },
+            commentBtnID(id){ return "commentBtn" + id;},
+            commentFieldID(id){ return "commentField" + id;}
         }
     });
 });
 
 // accept json request bodies
-app.use(express.json());
 app.post("/forms/add", (req, res) => {
-    console.log("request received: ");
+    console.log("new post received: ");
     console.log(req.body);
     try {
         fakePostDb.push({
             epoch_time: req.body['epoch'],
             subject: req.body['subject'],
-            content: req.body['content']
-        })
+            content: req.body['content'],
+            like: req.body['like'],
+            id: hash(String(req.body['epoch']))
+        });
         res.sendStatus(200);
     } catch(e) {
         res.statusMessage = e;
         res.sendStatus(400);
     }
+    console.log("posts: ");
+    console.log(fakePostDb);
+});
+
+// update like
+app.put("/forms/like", (req, res) => {
+    console.log("like received: ");
+    console.log(req.body);
+    try {
+        for(var i = 0; i < fakePostDb.length; i++){
+            if(fakePostDb[i].id == req.body["id"])
+                fakePostDb[i].like = req.body["like"];
+        }
+        res.sendStatus(200);
+    } catch(e) {
+        res.statusMessage = e;
+        res.sendStatus(400);
+    }
+    console.log("posts: ");
+    console.log(fakePostDb);
 });
 
 // 404 not found page
@@ -110,3 +142,19 @@ app.use((req, res, err) => {
 app.listen(port, () => {
     console.log("Server now listening on port " + port);
 });
+
+function hash(s) {
+    /* Simple hash function. */
+    var a = 1, c = 0, h, o;
+    if (s) {
+        a = 0;
+        /*jshint plusplus:false bitwise:false*/
+        for (h = s.length - 1; h >= 0; h--) {
+            o = s.charCodeAt(h);
+            a = (a<<6&268435455) + o + (o<<14);
+            c = a & 266338304;
+            a = c!==0?a^c>>21:a;
+        }
+    }
+    return String(a);
+}

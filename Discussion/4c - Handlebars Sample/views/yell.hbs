@@ -6,20 +6,33 @@
     }
 </style>
 
-<h1 class="yell">YELL!</h1>
+<h1 class="yell">{{title}}</h1>
 <input id="yellForm" type="text" placeholder="enter message to yell">
 <button id="yellBtn"> Yell </button>
+<div id="outputs"></div>
 
 <script>
+    var b = 0;
     document.addEventListener("DOMContentLoaded", function(event) {
         alert('{{{loud message}}}');
-
         const yellForm = document.getElementById("yellForm");
         const yellBtn = document.getElementById("yellBtn");
+        var msg = "";
         yellBtn.addEventListener('click', (ev) => {
-            const msg = yellForm.value.toUpperCase();
+            msg = yellForm.value.toUpperCase();
             alert(msg);
             yellForm.value = "";
+            const outs = document.getElementById("outputs");
+            const p = document.createElement("p");
+            const btn = document.createElement("button");
+            p.textContent = msg;
+            p.id = increment();
+            outs.append(p);
+            console.log(p);
         });
     });
+
+    function increment(){
+        return this.b++;
+    }
 </script>

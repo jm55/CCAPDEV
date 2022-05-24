@@ -1,0 +1,12 @@
+<h1> List of people </h1>
+<ul>
+    {{#each items}}
+    <div>
+        <h2>{{this.lastname}}, {{this.firstname}}</h2>
+        <div>
+            <li>{{this.age}}</li>
+            <li>{{this.sex}}</li>
+        </div>
+    </div>
+    {{/each}}
+</ul>
