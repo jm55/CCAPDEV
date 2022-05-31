@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
         reqBody['like'] = 0;
         reqBody['epoch'] = new Date().getTime();
+        reqBody['author'] = 
         console.log(reqBody);
         const myJSONbody = JSON.stringify(reqBody);
         fetch("/forms/add", {

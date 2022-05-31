@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/css/forms.css">
 <h1> Forms Sample </h1>
+<h2>Logged in as: {{user.username}}</h2>
 <form id="postForm" name="postForm">
     <fieldset>
         <legend>Create Post</legend>
@@ -14,19 +15,23 @@
 <hr />
 {{#if posts}}
 {{#each posts}}
-<div class="posts" id={{this.id}}>
-    <p class="date">{{toDate this.epoch_time}}</p>
-    <p class="subject">{{this.subject}}</p>
-    <p class="content">{{this.content}}</p>
-    <p class="like" id={{likeID this.id}}>Like: {{this.like}}</p>
-    <button id={{likeBtnID this.id}} onclick="updateLike('{{this.id}}')">Like</button>
-    <div style="display:grid;">
-        <input style="width:inherit;"type="text" id={{commentFieldID this.id}} />
-        <button id={{commentBtnID this.id}} onclick="submitComment('{{this.id}}')">Comment</button>
+    <div class="posts" id={{this.id}} user="{{this.author}}">
+        <p class="date">{{toDate this.epoch_time}}</p>
+        <p class="subject">{{this.subject}}</p>
+        <p class="content">{{this.content}}</p>
+        <p class="like" id={{likeID this.id}}>{{pluralInator "Like" this.like}}: {{this.like}}</p>
+        <button id={{likeBtnID this.id}} onclick="updateLike('{{this.id}}')">Like</button>
+        <div style="margin-top:2px;">
+            <input style="width:80%;"type="text" id={{commentFieldID this.id}} />
+            <button id={{commentBtnID this.id}} onclick="submitComment('{{this.id}}', '{{user.user_id}}')">Comment</button>
+        </div>
+        <div>
+            {{#each comments}}
+                <p>{{comment.author}}: {{comment.comment_text}}</p>
+            {{/each}}
+        </div>
     </div>
-    
-</div>
-<br>
+    <br>
 {{/each}}
 {{else}}
 <p> No posts to show...</p>

@@ -9,8 +9,19 @@ import exphbs from 'express-handlebars';
 const port = 3000;
 
 var fakePostDb = [
-    {post_id: hash(String(1652002412)), epoch_time: 1652002412, subject: "hello", content: "test content", "like": 0, id: '194895533'},
+    {author: hash("test_user" + 1652002411), post_id: hash(String(1652002412)), epoch_time: 1652002412, subject: "hello", content: "test content", "like": 0, id: '194895533'},
 ];
+
+var fakeUserDb = [
+    {user_id: hash("test_user" + 1652002411), name: "test user", username: "test.user"}
+];
+
+var fakeCommentDb = [];
+
+var loggedIn = {user_id: hash("loggedInUser" + 1653358788), name: "Foo Bar", username: "foo.bar"};
+fakeUserDb.push(loggedIn);
+
+fakeCommentDb.push({author: loggedIn.user_id, comment_id: hash(loggedIn.user_id+String(1653358798)), post_id: hash(String(1652002412)), comment_text: "this is test comment"});
 
 const app = express();
 // Set static folder
@@ -30,6 +41,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
     res.redirect('/home');
+    checkData();
 });
 
 app.get('/home', (req, res) => {
@@ -81,16 +93,24 @@ app.post("/forms", (req, res, next) => {
 app.get("/forms", (req, res) => {
     res.render("forms", {
         title: "Forms sample",
+        user: loggedIn,
         posts: fakePostDb,
+        comments: fakeCommentDb,
         helpers: {
             toDate(epoch) {return new Date(epoch).toDateString();},
             getDate() { return new Date().getTime();},
             likeBtnID(id){ return "likeBtn" + id; },
             likeID(id){ return "like" + id; },
             commentBtnID(id){ return "commentBtn" + id;},
-            commentFieldID(id){ return "commentField" + id;}
+            commentFieldID(id){ return "commentField" + id;},
+            pluralInator(word,likeval,){
+                if(likeval > 1)
+                    return word + "s";
+                return word;
+            }
         }
     });
+    checkData();
 });
 
 // accept json request bodies
@@ -103,7 +123,8 @@ app.post("/forms/add", (req, res) => {
             subject: req.body['subject'],
             content: req.body['content'],
             like: req.body['like'],
-            id: hash(String(req.body['epoch']))
+            id: hash(String(req.body['epoch'])),
+            author: req.body['user_id']
         });
         res.sendStatus(200);
     } catch(e) {
@@ -116,6 +137,24 @@ app.post("/forms/add", (req, res) => {
 
 // update like
 app.put("/forms/like", (req, res) => {
+    console.log("like received: ");
+    console.log(req.body);
+    try {
+        for(var i = 0; i < fakePostDb.length; i++){
+            if(fakePostDb[i].id == req.body["id"])
+                fakePostDb[i].like = req.body["like"];
+        }
+        res.sendStatus(200);
+    } catch(e) {
+        res.statusMessage = e;
+        res.sendStatus(400);
+    }
+    console.log("posts: ");
+    console.log(fakePostDb);
+});
+
+// update like
+app.put("/forms/comment", (req, res) => {
     console.log("like received: ");
     console.log(req.body);
     try {
@@ -157,4 +196,14 @@ function hash(s) {
         }
     }
     return String(a);
+}
+
+function checkData(){
+    console.log("============================================");
+    console.log(fakeUserDb);
+    console.log(fakePostDb);
+    console.log(fakeCommentDb);
+    console.log("Logged in as: ");
+    console.log(loggedIn);
+    console.log("============================================");
 }

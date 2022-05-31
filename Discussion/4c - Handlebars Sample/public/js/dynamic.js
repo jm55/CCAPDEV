@@ -6,7 +6,7 @@ $(document).ready((e)=>{
 });
 
 $(".layoutBody").ready((e)=>{
-    //renderLike();
+    renderLike();
 });
 
 //Pre-load likes
@@ -15,9 +15,9 @@ function renderLike(){
     for(var i = 0; i < posts.length; i++){
         var like = posts.children(".like")[i];
         var likeVal = like.innerHTML.substring(like.innerHTML.lastIndexOf(':')+2);
+        like.innerHTML = pluralInator("Like", likeVal) + ": " + likeVal;
     }
 }
-
 
 function pluralInator(word, val){
     if(val > 1)
@@ -70,9 +70,33 @@ function updateLike(id){
     console.log("like completed!");
 }
 
-function submitComment(id){
-    var commentField = document.getElementById('commentField' + id);
+function submitComment(post_id, user_id){
+    var commentField = document.getElementById('commentField' + post_id);
     var comment = String($(commentField).val());
+    console.log("comment (" + post_id + "): " + comment);
+
+    //Update server
+    var list = {};
+    list["author"] = user_id;
+    list[""] = user_id;
+    const jsonLike = JSON.stringify(list);
+    console.log(jsonLike);
+    fetch("/forms/like", {
+        method: "PUT",
+        body: jsonLike,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((res) => {
+        console.log("awaiting response...");
+        if (res.status >= 200 && res.status < 300) {// SUCCESS
+            location.reload();
+        } else {// ERROR
+            console.log("response error: " + res.status);
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
 }
 
 function hash(s) {
