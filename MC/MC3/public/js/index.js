@@ -1,6 +1,5 @@
 var appendFirst = false;
 
-
 // @ts-ignore
 document.addEventListener("DOMContentLoaded", function (event) {
     const refnoInput = document.querySelector('#refno');
@@ -156,6 +155,7 @@ function buildCard(json){
     //Button
     var x = document.createElement('button');
     x.className = 'remove';
+    x.textContent = 'X';
 
     card.append(img);
     card.append(info);
