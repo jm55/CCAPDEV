@@ -1,0 +1,20 @@
+<div id="container">
+    <h1> PayApp </h1>
+
+    <div id="content">
+        <form id="payment_form">
+            <input type="text" name="name" id="name" class="field" placeholder="Name"> <br>
+            <input type="number" name="refno" id="refno" class="field" placeholder="Reference Number"> <br>
+            <input type="number" name="amount" id="amount" class="field" placeholder="Amount"> <br>
+            <input type="button" name="submit" id="submit" value="SUBMIT">
+        </form>
+        <p id="error"></p>
+        <div id="cards">
+        {{#if transactions}}
+        {{#each transactions}}
+            {{>card}}
+        {{/each}}
+        {{/if}}
+        </div>
+    </div>
+</div>
