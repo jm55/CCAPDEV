@@ -1,0 +1,71 @@
+[{
+  "_id": {
+    "$oid": "629ca8788bd35b6dabdd6696"
+  },
+  "username": "dlsu",
+  "email": "dlsu_budolfinds@dlsu.edu.ph",
+  "fname": "De La Salle",
+  "lname": "University",
+  "gender": "M",
+  "bio": "De La Salle University positions itself as a leader in molding human resources who serve the church and the nation. \r\n\r\nIt is a Catholic coeducational institution founded in 1911 by the Brothers of the Christian Schools.",
+  "passhash": "$2b$10$jHn36RZ84BE.1ZgJEnyQ1uIJXlfZbcnEidiLHZFq0TDUBqVSTDVtm",
+  "userId": "9QoOG2nLvY",
+  "profilepic": "/img/dp/9QoOG2nLvY.webp",
+  "mname": ""
+},{
+  "_id": {
+    "$oid": "629ca995a1ca9ac4d0776e46"
+  },
+  "username": "jmescalona_dlsu",
+  "email": "jose_miguel_escalona@dlsu.edu.ph",
+  "fname": "Miguel",
+  "mname": "Aleta",
+  "lname": "Escalona",
+  "gender": "M",
+  "bio": "ID-119\r\nBSCS-NIS",
+  "passhash": "$2b$10$GbHroWeswTYy4XbCAzG67eblPLWuzVD5LikSPQew0oQ6ik56cTQVK",
+  "userId": "y983WAJRJx",
+  "profilepic": "/img/dp/y983WAJRJx.webp"
+},{
+  "_id": {
+    "$oid": "629caaf5a3e8f69d4a303b9e"
+  },
+  "username": "violet_evergarden",
+  "email": "evergarden_violet@chpostal.com",
+  "fname": "Violet",
+  "mname": "　",
+  "lname": "Evergarden",
+  "gender": "F",
+  "bio": "お客様がお望みならどこでも駆けつけます\r\n自動式人形サービヴァイオレット・エヴァーガーデンです",
+  "passhash": "$2b$10$96HIcr99CPy0TDE8NLXVMuv/NHcXSw3Svwe5EJR5jknuCA1t5JH5C",
+  "userId": "xzDDAjlDOZ",
+  "profilepic": "/img/dp/xzDDAjlDOZ.webp"
+},{
+  "_id": {
+    "$oid": "629cabb5a3e8f69d4a303b9f"
+  },
+  "username": "momotetsu_nene",
+  "email": "nenechi@hololive.covercorp.com",
+  "fname": "Nene",
+  "mname": "Chi",
+  "lname": "Momotetsu",
+  "gender": "F",
+  "bio": "こんねねー！",
+  "passhash": "$2b$10$r6uwfp7N/8Av1v.HrNjqOuSA5IpSdi52e1HmVhjDwNrhtjZnPRNWG",
+  "userId": "7YWgnMK3aY",
+  "profilepic": "/img/dp/7YWgnMK3aY.webp"
+},{
+  "_id": {
+    "$oid": "629e084bb6ad30e4c148ff9e"
+  },
+  "username": "kronii_ouro",
+  "email": "ouro_kronii@hololive.covercorp.com",
+  "fname": "Kronii",
+  "mname": "",
+  "lname": "Ouro",
+  "gender": "F",
+  "bio": "ご飯にする？お風呂にする？それとも…わ・た・し？",
+  "passhash": "$2b$10$TuzcNctBXJdGeJBG8byybedsonitInYj8EhFLlhJKBl1mboX16CM2",
+  "userId": "ZP14Jw2BzY",
+  "profilepic": "/img/dp/ZP14Jw2BzY.webp"
+}]

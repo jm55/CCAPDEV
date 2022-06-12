@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/post.css">
+<link rel="stylesheet" href="/css/profile.css">
+<script src="/js/banner.js"></script>
+<script src="/js/post.js"></script>
+<script src="/js/postcards.js"></script>
+
+<header class="card brand_banner">
+    <div class="banner_left">
+        <p class="banner_title"><a id="logo-btn" href="/home">Budol Finds</a></p>
+        <nav class="menu">
+            <button id="home-btn" class="menu_button">Home</button>
+            <button id="account-settings-btn" class="menu_button">Settings</button>
+            <button id="logout-btn" class="menu_button">Logout</button>
+        </nav>
+    </div>
+    <div class="banner_right">
+        <a id="userbutton"><img onerror="this.src='/img/default/imagenotfound.webp'" loading='lazy'  id="profile-pic" class="profilepic" src={{#if currentUser.profilepic}}{{currentUser.profilepic}}{{else}}"../img/default/default_dp.webp"{{/if}}></a>
+    </div>
+</header>
+
+<div class="card edit_post">
+    {{>edit_post_form}}
+</div>
+
+<script>
+    currentPost ={{{currentPostJSON}}};
+</script>
+

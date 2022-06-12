@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="/css/post.css">
+<link rel="stylesheet" href="/css/profile.css">
+
+<script src="/js/banner.js"></script>
+<script src="/js/profile.js"></script>
+<script src="/js/postcards.js"></script>
+<script src="/js/postbuilder.js"></script>
+
+<header class="card brand_banner">
+    <div class="banner_left">
+        {{>bannertitle}}
+        <nav class="menu">
+            <button id="home-btn" class="menu_button">Home</button>
+            {{>menu_categories}}
+            <input id="search-txt" name="search-txt" class="textfield" placeholder="Search"/>
+            <button id="search-btn" class="menu_button">Search</button>
+            <button id="account-settings-btn" class="menu_button">Settings</button>
+            <button id="logout-btn" class="menu_button">Logout</button>
+        </nav>
+    </div>
+    <div class="banner_right">
+        <a id="userbutton"><img onerror="this.src='/img/default/imagenotfound.webp'" loading='lazy'  id="profile-pic" class="profilepic" src='{{#if currentUser.profilepic}}{{currentUser.profilepic}}{{else}}"../img/default/default_dp.webp"{{/if}}'></a>
+    </div>
+</header>
+
+{{#if targetUser}}
+    <div class="card" style="display: flex; width: 90%; margin: 0px auto 20px auto;">
+        <span style="width: 15%; margin-right: 4%; align-content: center;">
+            <img onerror="this.src='/img/default/imagenotfound.webp'" loading='lazy'  
+                style="max-height: 200px; max-width: 100% !important; margin-left: auto; margin-right: auto; display: block;" src="{{targetUser.profilepic}}">
+            <h1 style="font-size: 150%">{{targetUser.username}}</h1>
+        </span>
+        <span style="width: 16%; margin-right: 4%;">
+            <label>Name: </label>
+            <p>{{fullName targetUser.fname targetUser.mname targetUser.lname}}</p>
+            <label>Name: </label>
+            <p>{{targetUser.gender}}</p>
+            <label>Email: </label>
+            <a href="mailto:{{targetUser.email}}">{{targetUser.email}}</a>
+        </span>
+        <span style="width: 56%;height: 250px;">
+            <label>Link to Account: </label>
+            <p><a href="/user/{{targetUser.username}}">{{targetUser.username}}</a></p>
+            <label>Bio: </label>
+            <p>{{{convertEscapeChar targetUser.bio}}}</p>
+        </span> 
+        <span style="width: 17%;">
+            <div>
+                <p>Post Count:</p>
+                <h2>{{postCount}}</h2>
+                <br>
+                <p>Report Count:</p>
+                <h2>{{reportCount}}</h2>
+            </div>
+        </span>        
+    </div>
+
+    <div class="card" style="display: flex; width: 90%; margin: 0px auto 20px auto;">
+        <span style="width: 30%;"></span>
+        <span style="width: 40%;">
+            <input type="text" id="usersearch" class="textfield" style="margin-left: 10%; width: 60%;" placeholder="Profile Search" value='{{usersearch}}' />
+            <button id="usersearch-btn" class="menu_button" style="margin-left:10px;">Search</button> 
+        </span>
+        <span style="width: 30%;"></span>
+    </div>
+
+    <div class="container">
+        <div class="timeline">
+            {{#if posts}}  
+            {{#each posts}}
+                {{>postcards}}
+            {{/each}}
+            {{else}}
+                {{>notfound}}
+            {{/if}}
+        </div> <!--END OF TIMELINE-->
+        {{else}}
+            {{>notfound}}
+        {{/if}}
+    </div>
+<div id='load-more-div' style="width:100%; display:grid; margin: 10px auto 10px auto;">
+    <button style="margin-left: auto; margin-right:auto;" id="load-more-user" class="menu_button">Load More</button>
+</div>
+<script>
+    userId = '{{currentUser.userId}}';
+    targetUser = '{{targetUser.username}}';
+    username = '{{currentUser.username}}';
+    pageid = '{{pageid}}';
+</script>

@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/post.css">
+
+<script src="/js/banner.js"></script>
+<script src="/js/home.js"></script>
+<script src="/js/post.js"></script>
+<script src="/js/postcards.js"></script>
+<script src="/js/postbuilder.js"></script>
+
+<header class="card_brand_banner">
+    <div class="upper_banner my_account">
+        <span><a id="userbutton"><img onerror="this.src='/img/default/imagenotfound.webp'" loading='lazy'  id="profile-pic" class="profilepic" src='{{#if currentUser.profilepic}}{{currentUser.profilepic}}{{else}}"/img/default/default_dp.webp"{{/if}}' alt="User Profile Picture"></a></span>
+        <span id="userfullname"> {{fullName currentUser.fname currentUser.mname currentUser.lname}} </span>
+        <span> | </span>
+        <span> <a href="/profile" id="myaccount">My Account</a> </span>
+        <span> | </span>
+        <span> <a href="/logout" id="logout-btn">Logout</a> </span>
+    </div>
+    <div class="lower_banner">
+        <span class="span_banner-title">
+            <p class="banner_title"><a id="logo-btn" href="/">Budol Finds</a></p> <!--POINTS TO INDEX-->
+        </span>
+        <span class="span_search-bar">
+            <div class="search_bar">
+                <nav class="menu">
+                <input id="search-txt" name="search-txt" class="textfield" value="{{search}}" placeholder="Search"/>
+                {{>menu_categories}}
+                <button id="search-btn" class="menu_button">Search</button>                       
+            </div>
+            </span>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card new_post">
+        {{>post_form}}
+    </div>
+    
+    <div class="timeline">
+        {{#if posts}}  
+        {{#each posts}}
+            {{>postcards}}
+        {{/each}}
+        {{else}}
+            {{>notfound}}
+        {{/if}}
+        <div id='load-more-div' style="width:100%; display:grid; margin: 10px auto 10px auto;">
+            <button style="margin-left: auto; margin-right:auto;" id="load-more-home" class="menu_button">Load More</button>
+        </div>
+    </div> <!--END OF TIMELINE-->
+    
+</div>
+<script>
+    userId = '{{currentUser.userId}}';
+    username = '{{currentUser.username}}';
+    pageid = '{{pageid}}';
+</script>
