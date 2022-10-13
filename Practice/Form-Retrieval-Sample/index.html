@@ -9,7 +9,7 @@
                 font-family: "Poppins", sans-serif;
                 background-color: #f5f5f5;
                 color: white !important;
-                max-width: 600px;
+                max-width: 1000px;
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -180,6 +180,13 @@
         <div class="output">
             <h1 id="output"></h1>
         </div>
+		
+		<div class="Business Wide Discount">
+			<h2>Business Discount</h2>
+            <input id="discount" type="text">
+			<br>
+			<input id="discount" type="button" value="Apply">
+        </div>
 
         <div class="table">
             <h2>Table Adder</h2>
@@ -188,8 +195,11 @@
             <button id="collect-table-data">Collect Row Table Data</button>
             <table id="table">
                 <tr id="row_header">
-                    <th>Label</th>
-                    <th>Link</th>
+                    <th>Service</th>
+                    <th>Price</th>
+					<th>Discount</th>
+					<th>Description</th>
+					<th>Image</th>
                 </tr>
             </table>
             <label id="row_count" class="counter"></label>

@@ -85,20 +85,39 @@ function deleteRow(){
 function addRow(){
     var label_input = document.createElement("input");
     var link_input = document.createElement("input");
-    label_input.id = "label_input_" + row_count;
+	var link_discount = document.createElement("input");
+	var link_description = document.createElement("input");
+	var link_image = document.createElement("input");
+    
+	label_input.id = "label_input_" + row_count;
     link_input.id = "link_input_" + row_count;
-    label_input.type = "text";
-    link_input.type="text";
+    
+	label_input.type = "text";
+    link_input.type = "text";
+	link_discount.type = "text";
+	link_description.type = "text";
+	link_image.type = "text";
 
     var label_td = document.createElement("td");
     var link_td = document.createElement("td");
-    label_td.appendChild(label_input);
+	var discount_td = document.createElement("td");
+	var description_td = document.createElement("td");
+	var image_td = document.createElement("td");	
+	
+	label_td.appendChild(label_input);
     link_td.appendChild(link_input);
+	discount_td.appendChild(link_discount);
+	description_td.appendChild(link_description);
+	image_td.appendChild(link_image);
+	
 
     var tr = document.createElement("tr");
     tr.id = "row_" + row_count;
     tr.appendChild(label_td);
     tr.appendChild(link_td);
+	tr.appendChild(discount_td);
+	tr.appendChild(description_td);
+	tr.appendChild(image_td);
 
     $("#table").append(tr);
 
